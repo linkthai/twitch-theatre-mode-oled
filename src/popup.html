@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <style>
+      body {
+        width: 280px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 8px;
+      }
+      .settings {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 600;
+        gap: 4px;
+      }
+      .settings input {
+        margin-left: auto;
+        height: 32px;
+        width: 48px;
+      }
+      .subtitle {
+        font-weight: 400;
+        font-size: 12px;
+      }
+      .suffix {
+        width: 28px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="settings">
+        <div>
+          <div>Blackout contents after:</div>
+          <div class="subtitle">(min 1 second)</div>
+        </div>
+        <input id="blackoutDelay" type="number" />
+        <span class="suffix">sec</span>
+      </div>
+      <div class="settings">
+        <div>
+          <div>Flip chat after:</div>
+          <div class="subtitle">(0 to disable flip)</div>
+        </div>
+        <input id="chatFlipDelay" type="number" />
+        <span class="suffix">min</span>
+      </div>
+      <div class="settings">
+        <div>
+          <div>Hide highlight:</div>
+          <div class="subtitle">For community highlight, pin</div>
+        </div>
+        <input id="hideHighlight" type="checkbox" />
+      </div>
+    </div>
+    <script src="popup.js" type="text/javascript"></script>
+  </body>
+</html>
