@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Twitch Theatre Mode For Oled",
   "description": "Hide static elements in theatre mode in Twitch when there are no interaction. Occasionally flip the chat.",
-  "version": "1.2",
+  "version": "1.4",
   "action": {
     "default_popup": "popup.html",
     "default_title": "Twitch Theatre mode for OLED",

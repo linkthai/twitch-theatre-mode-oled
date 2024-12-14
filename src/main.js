@@ -86,7 +86,7 @@ const show = () => {
   if (chatinput) chatinput.style.visibility = "visible";
   if (highlight) highlight.style.visibility = "visible";
   if (collapseBtn) collapseBtn.style.visibility = 'visible';
-  if (scrollbar) scrollbar.style.visibility = 'visible';
+  if (scrollbar) scrollbar.style.opacity = '1';
   isHiding = false;
 };
 const hide = () => {
@@ -95,7 +95,7 @@ const hide = () => {
   if (chatinput) chatinput.style.visibility = "hidden";
   if (highlight) highlight.style.visibility = "hidden";
   if (collapseBtn) collapseBtn.style.visibility = 'hidden';
-  if (scrollbar) scrollbar.style.visibility = 'hidden';
+  if (scrollbar) scrollbar.style.opacity = '0';
   isHiding = true;
 };
 
@@ -147,7 +147,7 @@ const initTheatre = () => {
     }
   }
   header = document.querySelector(".stream-chat-header");
-  scrollbar = document.querySelector(".scrollbar-thumb")
+  scrollbar = document.querySelector(".chat-list--default .scrollbar-thumb") || document.querySelector(".chat-list--default .simplebar-track.vertical")
   if (!content) {
     content = document.querySelector(".chat-room__content");
     if (content) {
