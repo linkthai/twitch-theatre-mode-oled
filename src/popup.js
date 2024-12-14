@@ -45,8 +45,8 @@ function initUI() {
   };
   chatFlipDelayInput = document.getElementById("chatFlipDelay");
   chatFlipDelayInput.onchange = (e) => {
-    const value = parseInt();
-    if (isNaN(value) || value <= MIN_FLIP_DELAY) {
+    const value = parseInt(e.target.value);
+    if (isNaN(value) || value < MIN_FLIP_DELAY) {
       settings.chatFlipDelay = MIN_FLIP_DELAY;
       chatFlipDelayInput.value = MIN_FLIP_DELAY;
     } else {
@@ -61,11 +61,11 @@ function initUI() {
 
 function initStorage() {
   storage.sync.get(["blackoutDelay", "chatFlipDelay", "hideHighlight"], function (res) {
-    settings.blackoutDelay = res["blackoutDelay"] || 10;
+    settings.blackoutDelay = res["blackoutDelay"] ?? 10;
     blackoutDelayInput.value = settings.blackoutDelay;
-    settings.chatFlipDelay = res["chatFlipDelay"] || 10;
+    settings.chatFlipDelay = res["chatFlipDelay"] ?? 10;
     chatFlipDelayInput.value = settings.chatFlipDelay;
-    settings.hideHighlight = res["hideHighlight"] || false;
+    settings.hideHighlight = res["hideHighlight"] ?? false;
     hideHighlightInput.checked = settings.hideHighlight;
   });
 }
